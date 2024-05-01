@@ -1,0 +1,56 @@
+<!-- <div class="row">
+  <div class="col-sm-12">
+    <app-card cardTitle="Hello Card">
+      <p>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+        in culpa qui officia deserunt mollit anim id est laborum."
+      </p>
+    </app-card>
+  </div>
+</div> -->
+
+
+
+
+<form>
+	<div class="mb-3 row">
+		<label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Full text search:</label>
+		<div class="col-xs-3 col-sm-auto">
+			<input id="table-filtering-search" class="form-control" type="text" [formControl]="filter" />
+		</div>
+    <div class="col-xs-3 col-sm-auto ">
+      <button class="btn btn-info" (click)="addPage
+      ()">+</button>
+		</div>
+  
+
+	</div>
+</form>
+
+<table class="table  table-hover table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Country</th>
+			<th scope="col">Area</th>
+			<th scope="col">Population</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let country of countries$ | async; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+			<td>
+				<img
+					[src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag"
+					class="me-2"
+					style="width: 20px"
+				/>
+				<ngb-highlight [result]="country.name" [term]="filter.value"></ngb-highlight>
+			</td>
+			<td><ngb-highlight [result]="country.area | number" [term]="filter.value"></ngb-highlight></td>
+			<td><ngb-highlight [result]="country.population | number" [term]="filter.value"></ngb-highlight></td>
+		</tr>
+	</tbody>
+</table>

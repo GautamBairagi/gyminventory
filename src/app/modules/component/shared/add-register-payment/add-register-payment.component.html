@@ -1,0 +1,37 @@
+<div class="container">
+    <h2 class="mt-5 mb-4">Register Payments</h2>
+    <form [formGroup]="registerPayments">
+      <div class="mb-3">
+        <label for="memberName" class="form-label">Member Name:</label>
+        <input type="text" class="form-control" id="memberName" placeholder="Enter member name" formControlName="MemberName" 
+        [ngClass]="{'is-invalid': registerPayments.controls['MemberName'].errors && ckDep }">
+        <p class="text-danger" *ngIf="registerPayments.controls['MemberName'].errors && ckDep"> Enter Member Name</p>
+      </div>
+      <div class="mb-3">
+        <label for="membershipID" class="form-label">Membership ID:</label>
+        <input type="text" class="form-control" id="membershipID" placeholder="Enter membership ID" formControlName="MembershipID" 
+        [ngClass]="{'is-invalid': registerPayments.controls['MembershipID'].errors && ckDep }">
+        <p class="text-danger" *ngIf="registerPayments.controls['MembershipID'].errors && ckDep"> Enter Your Membership ID</p>
+      </div>
+      <div class="mb-3">
+        <label for="paymentAmount" class="form-label">Payment Amount:</label>
+        <input type="number" class="form-control" id="paymentAmount" placeholder="Enter payment amount"  formControlName="PaymentAmount" 
+        [ngClass]="{'is-invalid': registerPayments.controls['PaymentAmount'].errors && ckDep }">
+        <p class="text-danger" *ngIf="registerPayments.controls['PaymentAmount'].errors && ckDep"> Enter Your Payment Amount</p>
+      </div>
+      <div class="mb-3">
+        <label for="paymentMethod" class="form-label">Payment Method:</label>
+        <select class="form-select" id="paymentMethod" formControlName="PaymentMethod" 
+          [ngClass]="{'is-invalid': registerPayments.controls['PaymentMethod'].errors && ckDep }">
+          <p class="text-danger" *ngIf="registerPayments.controls['PaymentMethod'].errors && ckDep"> Enter Your Payment Method</p>
+          <option value="" disabled selected>Select payment method</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="PayPal">PayPal</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+          <option value="Cash">Cash</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

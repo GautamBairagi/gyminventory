@@ -1,0 +1,126 @@
+<div class="card-body">
+  
+  <main id="main" class="main">
+
+    <div class="container-fluid ">
+      <div class="row">
+        <div class="col-sm-4 col-md-4 my-3">
+          <h4  *ngIf="editData == true" class="d-inline" style="font-size: 24px;"><i class="fa-solid fa-gear icon"></i>
+            Assign Workout
+          </h4>
+          <h4  *ngIf="!editData == true" class="d-inline" style="font-size: 24px;"><i class="fa-solid fa-gear icon"></i>
+            Assign Workout
+          </h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid c1 py-3 my-2">
+
+      <form [formGroup]="registerForm">
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label for="inputEmail4">Select Member *</label>
+            <select class="form-select" formControlName="membername" id="specificSizeSelect"
+              [ngClass]="{'is-invalid': registerForm.controls['membername'].errors && ckDep }"
+              class="form-control">
+              <option value="Dhanraj">Dhanraj</option>
+              <option>Durgesh</option>
+              <option>Goutam</option>
+            </select>
+            <small *ngIf="registerForm.controls['membername'].errors && ckDep" class="text-danger">
+              Please Select Member</small>
+          </div>
+
+          <div class=" col-md-3">
+            <label for="inputPassword4">Level *</label>
+            <select class="form-select" formControlName="level" id="specificSizeSelect"
+              [ngClass]="{'is-invalid': registerForm.controls['level'].errors && ckDep }">
+              <option value="Level 1">Level 1</option>
+              <option>Level 2</option>
+              <option>Level 3</option>
+            </select>
+            <small *ngIf="registerForm.controls['level'].errors && ckDep" class="text-danger">
+              Please Select Level</small>
+          </div>
+          <div class=" col-sm-4 col-md-3">
+            <label for="inputPassword4">Start Date</label>
+            <input type="date" class="form-control" formControlName="startdate" id="startdate"
+              placeholder="Start Date"
+              [ngClass]="{'is-invalid': registerForm.controls['startdate'].errors && ckDep }">
+            <small *ngIf="registerForm.controls['startdate'].errors && ckDep" class="text-danger">
+              Please Select Start Date</small>
+          </div>
+
+          <div class=" col-sm-4 col-md-3">
+            <label for="inputPassword4">End Date</label>
+            <input type="date" class="form-control" formControlName="enddate" id="enddate" placeholder="End Date"
+              [ngClass]="{'is-invalid': registerForm.controls['enddate'].errors && ckDep }">
+            <small *ngIf="registerForm.controls['enddate'].errors && ckDep" class="text-danger">
+              Please Select End Date</small>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class=" col-sm-3 col-md-6">
+            <label for="inputPassword4">Description</label>
+            <textarea type="textarea" class="form-control" formControlName="description" id="slectdays"
+              placeholder="Description"></textarea>
+          </div>
+
+        </div>
+        <br>
+        <div class="row">
+          <div class=" col-sm-3 col-md-6">
+            <label for="inputPassword4">Select Days</label>
+            <mat-select class="form-select"  formControlName="slectdays" (selectionChange)= onChange($event.value)
+              [ngClass]="{'is-invalid': registerForm.controls['slectdays'].errors && ckDep }" multiple>
+              <mat-option value="Monday">Monday</mat-option>
+              <mat-option value="Tuesday">Tuesday</mat-option>
+              <mat-option value="Wednesday">Wednesday</mat-option>
+              <mat-option value="Thursday">Thursday</mat-option>
+              <mat-option value="Friday">Friday</mat-option>
+              <mat-option value="Saturday">Saturday</mat-option>
+            </mat-select>
+            <small *ngIf="registerForm.controls['slectdays'].errors && ckDep" class="text-danger">
+              Please Select Days</small>
+          </div>
+          <div class=" col-sm-3 col-md-6" *ngIf="show">
+            <label for="inputPassword4">Select Workout Activity To Add On Selected Days</label>
+            <mat-select class="form-select" formControlName="workactivity"
+              [ngClass]="{'is-invalid': registerForm.controls['workactivity'].errors && ckDep }" multiple>
+              <mat-option value="Hyperextension">Hyperextension</mat-option>
+              <mat-option value="Crunch">Crunch</mat-option>
+              <mat-option value="Leg Curl">Leg Curl</mat-option>
+              <mat-option value="Reverse Leg Curl">Reverse Leg Curl</mat-option>
+              <mat-option value="Body Conditioning">Body Conditioning</mat-option>
+              <mat-option value="Free Weights">Free Weights</mat-option>
+              <mat-option value="Fixed Weights">Fixed Weights</mat-option>
+              <mat-option value="Resisted Crunch">Resisted Crunch</mat-option>
+              <mat-option value="Plank">Plank</mat-option>
+              <mat-option value="High Leg Pull-In">High Leg Pull-In</mat-option>
+              <mat-option value="Low Leg Pull-In">Low Leg Pull-In</mat-option>
+            </mat-select>
+            <small *ngIf="registerForm.controls['workactivity'].errors && ckDep" class="text-danger">
+              Please Select workactivity</small>
+          </div>
+          
+        </div>
+        <hr>
+        
+
+      </form>
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+        <button class="btn btn-primary me-md-2 Btn_Save" *ngIf="!editData" type="submit" (click)="createNewTask()">Add
+          Member</button>
+         <button class="btn btn-primary me-md-2 Btn_Save"  *ngIf="editData" type="submit" (click)="createNewTask()">Update
+            Member</button>
+        <button class="btn btn-danger Btn_Close" type="button">Cancel</button>
+      </div>
+    </div>
+
+  </main>
+</div>

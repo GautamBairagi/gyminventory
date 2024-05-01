@@ -1,0 +1,20 @@
+<div class="container">
+    <h2 class="mt-1 mb-2">Print Notes</h2>
+    <form [formGroup]="printNotes">
+      <div class="mb-3">
+        <label for="noteTitle1" class="form-label">Print Note Title:</label>
+        <input type="text" class="form-control" id="noteTitle1" placeholder="Enter note title" formControlName="PrintNoteTitle" 
+        [ngClass]="{'is-invalid': printNotes.controls['PrintNoteTitle'].errors && ckDep }">
+        <p class="text-danger" *ngIf="printNotes.controls['PrintNoteTitle'].errors && ckDep"> Enter Your Note Title</p>
+      </div>
+      <div class="mb-3">
+        <label for="noteContent1" class="form-label">Print Note Content:</label>
+        <textarea class="form-control" id="noteContent1" rows="3" placeholder="Enter note content" formControlName="PrintNoteContent"
+         [ngClass]="{'is-invalid': printNotes.controls['PrintNoteContent'].errors && ckDep }"></textarea>
+         <p class="text-danger" *ngIf="printNotes.controls['PrintNoteContent'].errors && ckDep"> Enter Your Note Content</p>
+      </div>
+      <button type="submit" class="btn btn-primary">Print</button>
+    </form>
+    <!-- Stock Management -->
+    
+  </div>

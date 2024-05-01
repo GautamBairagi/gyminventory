@@ -1,0 +1,122 @@
+<div class="container" style="background-color: #FFF;">
+    <div class="modal-header" >
+        <h2 class="modal-title"><i class="fa-regular fa-users"></i> Add Membership</h2>
+        <button type="button" (click)="_activeModal.close()" class="btn-close" aria-label="Close" ></button>
+    </div>
+    <form [formGroup]="MembershipForm" (submit)="OnSubmit()">
+    <div class="modal-body">
+       
+
+        
+      <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label">Membership Name </label>
+                <input type="text" formControlName="membershipName" placeholder="Enter Membership Name" class="form-control" />
+             </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label">Membership Category </label>
+                <select class="form-select" formControlName="membershipCategory" aria-label="Default select example">
+                    <option value="">Select menu</option>
+                    <option >One</option>
+                    <option >Two</option>
+                    <option >Three</option>
+                  </select>
+             </div>
+        </div>
+<div class="col-md-6">
+    <div class="form-group">
+        <label class="form-label">Membership Period</label>
+        <input type="text" formControlName="membershipPeriod" class="form-control" />
+        
+     </div>
+</div>
+<div class="col-md-6">
+    <label class="form-label">Membership Limit </label>
+    <div class="form-group">
+        <input type="radio" value="Limited" formControlName="membershipLimit"   />  Limited 
+        <input type="radio" value="UnLimited" formControlName="membershipLimit"   />  UnLimited 
+     </div>
+</div>
+<div class="col-md-6">
+    <div class="form-group">
+        <label class="form-label">Membership Amount  </label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">$</span>
+            <input type="text" formControlName="membershipAmount" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+     </div>
+</div>
+<div class="col-md-6">
+
+    <div class="form-group">
+        <label class="form-label">Select Class  </label>
+        <select class="form-select" formControlName="selectClass" aria-label="Default select example">
+            <option value="">Select menu</option>
+            <option >One</option>
+            <option >Two</option>
+            <option >Three</option>
+          </select>
+     </div>
+</div>
+<div class="col-md-6">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Installment Plan Amount</label>
+                <input type="text" formControlName="installmentPlanAmount" placeholder="Amount" class="form-control" />
+             </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label class="form-label">Installment Plan</label>
+                <select class="form-select" formControlName="installmentPlan" aria-label="Default select example">
+                    <option value="">Select menu</option>
+                    <option >1 Week</option>
+                    <option >1 Month</option>
+                    <option >3 Month</option>
+                    <option >6 Month</option>
+                    <option >9 Month</option>
+                    <option >1 Year</option>
+                  </select>
+             </div>
+        </div>
+       
+    </div>
+
+</div>
+<div class="col-md-6">
+    <div class="form-group">
+        <label class="form-label">Signup Fee  </label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">$</span>
+            <input type="text" formControlName="signupFee" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+     </div>
+</div>
+<div class="col-md-6">
+    <div class="form-group">
+        <label class="form-label">Membership Description </label>
+       <textarea class="form-control" formControlName="membershipDescription">
+
+       </textarea>
+     </div>
+</div>
+<div class="col-md-6">
+  
+    <div class="form-group">
+        <label class="form-label">Membership Image </label>
+        <input type="file" (change)="Onchange($event)" formControlName="membershipImage" placeholder="Enter Membership Name" class="form-control form-control-lg" />
+     </div>
+</div>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark" >Save Membership</button>
+    </div>
+</form>
+</div>

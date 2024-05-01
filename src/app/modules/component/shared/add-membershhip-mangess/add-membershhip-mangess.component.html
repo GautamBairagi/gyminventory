@@ -1,0 +1,32 @@
+
+
+<div class="container">
+    <h2 class="text-center">Fingerprint Register</h2>
+    <form [formGroup]="membershipManagement">
+      <div class="mb-3">
+        <label for="fingerprint" class="form-label">Upload Fingerprint:</label>
+        <input type="file" class="form-control" id="fingerprint" name="fingerprint" formControlName="UploadFingerprint" 
+      
+        [ngClass]="{'is-invalid': membershipManagement.controls['UploadFingerprint'].errors && ckDep }"
+        >
+       <p class="text-danger"
+          *ngIf="membershipManagement.controls['UploadFingerprint'].errors && ckDep">Select Member Id
+        </p>
+    </div>
+
+       <h2 class="mb-3">Member Register (Management)</h2>
+      <div class="mb-3">
+        <label for="member_register_name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="member_register_name" name="member_register_name" formControlName="MemberRegister"
+         [ngClass]="{'is-invalid': membershipManagement.controls['MemberRegister'].errors && ckDep}">
+         <p class="text-danger" *ngIf="membershipManagement.controls['MemberRegister'].errors && ckDep"> Enter Your Name</p>
+      </div>
+      <div class="mb-3">
+        <label for="member_register_email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="member_register_email" name="member_register_email" formControlName="Email" 
+        [ngClass]="{'is-invalid': membershipManagement.controls['Email'].errors && ckDep }">
+        <p class="text-danger" *ngIf="membershipManagement.controls['Email'].errors && ckDep"> Enter Your Email</p>
+      </div> 
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

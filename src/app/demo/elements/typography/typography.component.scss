@@ -1,0 +1,196 @@
+ /* megha forms css start */
+ .prant_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+  }
+  
+  .cut_line {
+  
+    height: 35px;
+    width: 6px;
+  }
+  
+  
+  
+  .delete_icon {
+    height: 30px;
+    width: 30px;
+    background-color: #FF7F00;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  .delete_icon i {
+    color: #FFF;
+  }
+  
+  .edit_icon {
+    height: 30px;
+    width: 30px;
+    background-color:#011950;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .edit_icon i {
+    color: #FFF;
+  }
+  
+  .add_icon{
+    height: 30px;
+    width: 30px;
+    background-color: #011950;
+    color: white;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .view_icon{
+    height: 30px;
+    width: 30px;
+    background-color: #FF7F00;
+    border-radius: 9px;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .parent_div {
+    display: flex;
+    gap: 10px;
+  }
+  
+  
+  
+  .print_icon {
+    height: 30px;
+    width: 30px;
+    background-color: #2E2E2E;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .print_icon i {
+    color: #FFF;
+  }
+  
+  
+  
+  /* table */
+  
+  
+  .icon {
+    
+  color: #FF7F00;
+  }
+  
+  /* button */
+  
+  
+  
+  
+  
+  /* btn */
+  .Btn_Save {
+    background-color:#FF7F00;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .Btn_Save:hover {
+    background-color: #011950;
+    color: #FFF;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  
+  
+  .Btn_Close {
+    background-color: #ffffff;
+    color:  #011950;
+    border: 2px solid  #011950;
+  
+    padding: 10px;
+  
+    border-radius: 8px;
+    width: 150px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .Btn_Close:hover {
+    background-color: #0A1E3C;
+    color: #FFF;
+  
+  }
+   /* megha forms css end */
+  
+   /* logo css start */
+  .logo {
+    line-height: 1;
+  }
+  
+  @media (min-width: 1200px) {
+    .logo {
+      width: 280px;
+    }
+  }
+  @media (min-width: 200px)and (max-width:405px){
+  .logo img{
+    max-height: 26px !important;
+  }
+  .bi-list::before{
+    font-size:1.5rem;
+  }
+  
+  .bi-bell::before{
+    font-size:1.2rem;
+  }
+  .bi-chat-left-text::before {
+    font-size:1.2rem;
+  }
+  .header-nav .nav-profile{
+  height: 2vh;
+  }
+  .header{
+    padding-right: 2rem;
+  }
+  }
+  .logo img {
+    max-height: 45px;
+    margin-right: 6px ;
+  }
+  
+  .logo span {
+    font-size: 26px;
+    font-weight: 700;
+    color: #012970;
+    font-family: "Nunito", sans-serif;
+  }
+   /* logo css end */

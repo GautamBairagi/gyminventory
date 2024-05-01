@@ -1,0 +1,67 @@
+
+
+
+<div class="container" >
+    <div class="modal-header" >
+        <h2 class="modal-title"><i class="fa-regular fa-users"></i> Add Product</h2>
+        <button type="button" (click)="_modal.close()" class="btn-close" aria-label="Close" ></button>
+    </div>
+
+    <div class="modal-body">
+        <form class="validateForm form-horizontal" [formGroup]="addProductForm">
+    <div class="row">
+        <div class="col-md-6">
+            <div class='form-group'>	
+                <label  for="email">Product Name<span class="text-danger"> </span></label>
+              
+                    <input type="text"
+                     formControlName="productName" 
+                     class="form-control"
+                     [ngClass]="{
+                        'is-invalid':  addProductForm.controls['productName'].errors && checkForm
+                      }" >
+                 <small *ngIf="checkForm && addProductForm.controls['productName'].errors" class="text-danger">Insert product detail </small>	
+    
+    
+          
+                </div>
+            
+        </div>
+
+        <div class="col-md-6">
+            <div class='form-group'>	
+                <label  for="email">Product Price<span class="text-danger"> </span></label>
+                <input type="number" 
+                [ngClass]="{
+                    'is-invalid':  addProductForm.controls['productPrice'].errors && checkForm
+                  }"    
+                formControlName="productPrice"  class="form-control"  >
+        
+                   
+                      <small *ngIf="checkForm && addProductForm.controls['productPrice'].errors" class="text-danger">Insert price detail </small>	
+    
+         
+                </div>
+        </div>
+        <div class="col-md-12">
+            <div class='form-group mt-2'>	
+                <label class="control-label col-md-2" for="email">Product Quantity</label>
+              
+                    <input type="number" formControlName="productQuantity"
+                    [ngClass]="{
+                        'is-invalid':  addProductForm.controls['productQuantity'].errors && checkForm
+                      }"
+                    class="form-control">
+                    <small *ngIf="checkForm && addProductForm.controls['productQuantity'].errors" class="text-danger">Insert quantity detail </small>	
+    
+                
+                </div>
+        </div>
+                   
+    </div>
+ 
+</form>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="save()" >Save Product</button>
+    </div>
+</div>

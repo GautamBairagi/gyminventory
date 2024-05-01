@@ -1,0 +1,74 @@
+
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"> Generate Payment Invoice</h4>
+      <button type="button" (click)="_activeModal.close()" class="btn-close" aria-label="Close" ></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="row">
+          <div class="col-md-12">
+            <label for="inputEmail4">Member</label>
+            <select class="form-select" [ngClass]="{'is-invalid': addMember.controls['memberShip'].errors && ckDep }" formControlName="memberShip">
+              <option value="" disabled> Select Member</option>
+              <option value="" > Gautam</option>
+              <option value="" > Rehan</option>
+              <option value="" > Deepak</option>
+              <p class="text-danger"
+              *ngIf="addMember.controls['memberShip'].errors && ckDep">Select Member
+            </p>
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class=" col-md-12">
+            <label for="inputPassword4">Membership</label>
+            <select class="form-select" [ngClass]="{'is-invalid': addMember.controls['memberShip'].errors && ckDep }" formControlName="memberShip">
+              <option value="" disabled> Select Membership</option>
+              <option value="" > Platinum Membership</option>
+              <option value="" > Gold Membership</option>
+              <option value="" > Silver Membership</option>
+              <p class="text-danger"
+              *ngIf="addMember.controls['memberShip'].errors && ckDep">Select Membership
+            </p>
+            </select>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col-md-12">
+            <label for="inputEmail4">Total Amount </label>
+            <input type="text" class="form-control" id="inputEmail4"  formControlName="middleName" 
+            [ngClass]="{'is-invalid': addMember.controls['middleName'].errors && ckDep }" placeholder="Middle Name">
+            <p class="text-danger"
+            *ngIf="addMember.controls['middleName'].errors && ckDep">Select Total Amount
+          </p>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class=" col-md-6">
+            <label for="inputPassword4">Membership Valid From</label>
+            <input type="date" class="form-control" id="inputPassword4"  formControlName="memberShipto"
+            [ngClass]="{'is-invalid': addMember.controls['memberShipto'].errors && ckDep }"  placeholder="Membership Valid To">
+            <p class="text-danger"
+            *ngIf="addMember.controls['memberShipto'].errors && ckDep">Select Membership Valid From
+          </p>
+          </div>
+          <div class=" col-md-6">
+            <label for="inputPassword4">Membership Valid To</label>
+            <input type="date" class="form-control" id="inputPassword4"  formControlName="memberShipto"
+            [ngClass]="{'is-invalid': addMember.controls['memberShipto'].errors && ckDep }"  placeholder="Membership Valid To">
+            <p class="text-danger"
+            *ngIf="addMember.controls['memberShipto'].errors && ckDep">Select Membership Valid To
+          </p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" >Save</button>
+    </div>
+  

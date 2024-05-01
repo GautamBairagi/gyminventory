@@ -1,0 +1,178 @@
+<main id="main" class="main">
+  <div class="container-fluid ">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 my-3">
+            <h4 class="d-inline" style="font-size: 24px;"><i class="fa-solid fa-gear icon"></i>
+              Add Staff
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid c1 py-3 my-2">
+<form [formGroup]="addstaff">
+  <div class="col-sm-4 ">
+    <h4 class="d-inline"><i class="fa-solid fa-gear icon"></i>
+        Personal Information
+    </h4>
+  </div>
+<hr>
+    <div class="row">
+      <div class="col-md-3">
+        <label for="inputEmail4">First Name </label>
+        <input type="type" formControlName="firstName" [ngClass]="{'is-invalid': addstaff.controls['firstName'].errors && ckSetaff }"  class="form-control" id="inputEmail4" placeholder="First Name">
+       <p class="text-danger" *ngIf="addstaff.controls['firstName'].errors && ckSetaff">
+          Enter Your First Name</p>
+      </div>
+     
+      <div class=" col-md-3">
+        <label for="inputPassword4">Middle Name</label>
+        <input type="type"  [ngClass]="{'is-invalid': addstaff.controls['middleName'].errors && ckSetaff }" formControlName="middleName" class="form-control" id="inputPassword4" placeholder="Middle Name">
+        <p class="text-danger" *ngIf="addstaff.controls['middleName'].errors && ckSetaff">
+          Enter Your Middle Name</p>
+      </div>
+
+      <div class=" col-md-3">
+        <label for="inputPassword4">Last Name</label>
+        <input type="type"  [ngClass]="{'is-invalid': addstaff.controls['lastName'].errors && ckSetaff }" formControlName="lastName" class="form-control" id="inputPassword4" placeholder="Last Name">
+        <p class="text-danger" *ngIf="addstaff.controls['lastName'].errors && ckSetaff">
+          Enter Your Last Name</p>
+      </div>
+
+      <div class=" col-md-3">
+        <label class="" >Gender</label>
+        <select  [ngClass]="{'is-invalid': addstaff.controls['gender'].errors && ckSetaff }" formControlName="gender" class="form-select" id="specificSizeSelect">
+            <option value="">Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+        <p class="text-danger" *ngIf="addstaff.controls['gender'].errors && ckSetaff">
+          Select Your Gender</p>
+    </div>
+    </div>
+
+    <div class="row">
+      <div class=" col-md-3">
+        <label for="inputPassword4">Date Of Birth</label>
+        <input type="date"  [ngClass]="{'is-invalid': addstaff.controls['dateOfBirth'].errors && ckSetaff }" formControlName="dateOfBirth" class="form-control" id="inputPassword4" placeholder="Date Of Birth">
+        <p class="text-danger" *ngIf="addstaff.controls['dateOfBirth'].errors && ckSetaff">
+          Pick Your Date</p>
+      </div>
+
+      <div class=" col-md-3">
+        <label for="inputPassword4">Assign Role</label>
+        <input type="type" [ngClass]="{'is-invalid': addstaff.controls['assignRole'].errors && ckSetaff }" formControlName="assignRole" class="form-control" id="inputPassword4" placeholder="Assign Role">
+        <p class="text-danger" *ngIf="addstaff.controls['assignRole'].errors && ckSetaff">
+          Enter Your Assign Role</p>
+      </div>
+
+      <div class=" col-md-3">
+        <label for="inputPassword4">Select Role</label>
+        <input type="type" [ngClass]="{'is-invalid': addstaff.controls['selectRole'].errors && ckSetaff }" formControlName="selectRole" class="form-control" id="inputPassword4" placeholder="selectRole">
+        <p class="text-danger" *ngIf="addstaff.controls['selectRole'].errors && ckSetaff">
+          Enter Your Assign Role</p>
+      </div>
+
+      <div class=" col-md-3">
+        <label for="inputPassword4">Specialization</label>
+        <input type="type" formControlName="specialization"  [ngClass]="{'is-invalid': addstaff.controls['specialization'].errors && ckSetaff }" class="form-control" id="inputPassword4" placeholder="Specialization">
+     
+        <p class="text-danger" *ngIf="addstaff.controls['specialization'].errors && ckSetaff">
+          Enter Your Specialization</p> </div>
+     </div>
+     <br>
+     <div class="col-sm-4 ">
+      <h4 class="d-inline"><i class="fa-solid fa-gear icon"></i>
+        Contact Information
+      </h4>
+    </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="inputEmail4">Home Town Address </label>
+      <input type="type" formControlName="homeTownAddress"  [ngClass]="{'is-invalid': addstaff.controls['homeTownAddress'].errors && ckSetaff }" class="form-control" id="inputEmail4" placeholder="Home Town Address">
+      <p class="text-danger" *ngIf="addstaff.controls['homeTownAddress'].errors && ckSetaff">
+        Enter Your HomeTownAddress</p>
+    </div>
+
+ 
+    <div class=" col-md-3">
+      <label for="inputPassword4">City</label>
+      <input type="type" formControlName="city" [ngClass]="{'is-invalid': addstaff.controls['city'].errors && ckSetaff }" class="form-control" id="inputPassword4" placeholder="City">
+      <p class="text-danger" *ngIf="addstaff.controls['city'].errors && ckSetaff">
+        Enter Your City</p>
+    </div>
+
+    <div class=" col-md-3">
+      <label for="inputPassword4">Mobile Number </label>
+      <input type="type" formControlName="mobileNumber" [ngClass]="{'is-invalid': addstaff.controls['mobileNumber'].errors && ckSetaff }" class="form-control" id="inputPassword4" placeholder="Mobile Number ">
+   
+      <p class="text-danger" *ngIf="addstaff.controls['mobileNumber'].errors && ckSetaff">
+        Enter Your Mobile Number</p>
+    </div>
+    
+  </div>
+
+  <div class="row">
+  <div class=" col-md-3">
+    <label for="inputPassword4">Email </label>
+    <input type="email" formControlName="email"  [ngClass]="{'is-invalid': addstaff.controls['email'].errors && ckSetaff }"  class="form-control" id="inputPassword4" placeholder="Email">
+  
+    <p class="text-danger" *ngIf="addstaff.controls['email'].errors && ckSetaff">
+      Enter Your Email</p>
+  </div>
+</div>
+<br>
+
+<div class="col-sm-4 ">
+  <h4 class="d-inline"><i class="fa-solid fa-gear icon"></i>
+    Login Information
+  </h4>
+</div>
+<hr>
+<div class="row">
+<div class="col-md-3">
+  <label for="inputEmail4">Username </label>
+  <input type="type" formControlName="username" [ngClass]="{'is-invalid': addstaff.controls['username'].errors && ckSetaff }" class="form-control" id="inputEmail4" placeholder="Username">
+  <p class="text-danger" *ngIf="addstaff.controls['username'].errors && ckSetaff">
+    Enter Your Username</p>
+</div>
+
+<div class=" col-md-3">
+  <label for="inputPassword4">Password </label>
+  <input type="type" formControlName="password" [ngClass]="{'is-invalid': addstaff.controls['password'].errors && ckSetaff }" class="form-control" id="inputPassword4" placeholder="Password ">
+  <p class="text-danger" *ngIf="addstaff.controls['password'].errors && ckSetaff">
+    Enter Your Password</p>
+</div>
+
+
+
+
+<div class="col-md-3">
+  <label for="inputEmail4">Display Image </label>
+  <input type="file" class="form-control" id="inputEmail4" formControlName="displayImage"(change)="onSelectFile($event)"
+  [ngClass]="{'is-invalid': addstaff.controls['displayImage'].errors && ckSetaff }"  placeholder="Choose File">
+  
+  <p class="text-danger"
+  *ngIf="addstaff.controls['displayImage'].errors && ckSetaff">Select Image
+</p>
+
+</div>
+<div class="col-md-3">
+  <label class="hoverable" for="fileInput">
+    <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" style="width: 100px;"> 
+    <div class="background"></div>
+  </label>
+</div>
+
+</div>
+  </form>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+        <button class="btn btn-primary me-md-2 Btn_Save" (click)="addstaffdata()" type="button">Save</button>
+        <button class="btn btn-primary Btn_Close" type="button">Cancle</button>
+    </div>
+</div>
+
+</main>

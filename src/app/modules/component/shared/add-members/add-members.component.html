@@ -1,0 +1,296 @@
+<main id="main" class="main">
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-sm-4 col-md-4 my-3">
+        <h4 class="d-inline"  style="font-size: 24px;" ><i class="fa-solid fa-gear icon"></i>
+          Add Membership
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid c1 py-3 my-2">
+    <div class="col-sm-4 ">
+      <h4 class="d-inline"><i class="fa-solid fa-gear icon"></i>
+        Personal Information
+      </h4>
+    </div>
+    <hr>
+    <form [formGroup]="addMember">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="inputEmail4">Member ID </label>
+          <input type="text" class="form-control" id="inputEmail4" formControlName="memberId"
+          [ngClass]="{'is-invalid': addMember.controls['memberId'].errors && ckDep }" placeholder="Member ID">
+          <p class="text-danger"
+          *ngIf="addMember.controls['memberId'].errors && ckDep">Select Member Id
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">First Name</label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="firstName" 
+          [ngClass]="{'is-invalid': addMember.controls['firstName'].errors && ckDep }"  placeholder="First Name">
+          <p class="text-danger"
+          *ngIf="addMember.controls['firstName'].errors && ckDep">Select First Name
+        </p>
+        </div>
+        <div class="col-md-3">
+          <label for="inputEmail4">Middle Name </label>
+          <input type="text" class="form-control" id="inputEmail4"  formControlName="middleName" 
+          [ngClass]="{'is-invalid': addMember.controls['middleName'].errors && ckDep }" placeholder="Middle Name">
+          <p class="text-danger"
+          *ngIf="addMember.controls['middleName'].errors && ckDep">Select Middle Name
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">Last Name</label>
+          <input type="text" class="form-control" id="inputPassword4"  formControlName="lastName"
+          [ngClass]="{'is-invalid': addMember.controls['lastName'].errors && ckDep }" placeholder="Last Name">
+          <p class="text-danger"
+          *ngIf="addMember.controls['lastName'].errors && ckDep">Select Last Name
+        </p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="inputPassword4">Gender</label>
+          <select class="form-select" value="" formControlName="gender" [ngClass]="{'is-invalid': addMember.controls['gender'].errors && ckDep }">
+            <option value="Male" >Male</option>
+            <option value="Female" >Female</option>
+          </select>
+          <p class="text-danger"
+          *ngIf="addMember.controls['gender'].errors && ckDep">Select Gender
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">Date Of Birth</label>
+          <input type="date" class="form-control" id="inputPassword4" formControlName="dob"
+          [ngClass]="{'is-invalid': addMember.controls['dob'].errors && ckDep }" placeholder="Date Of Birth">
+          <p class="text-danger"
+          *ngIf="addMember.controls['dob'].errors && ckDep">Select Date Of Birth
+        </p>
+        </div>
+      </div>
+      <br>
+      <div class="col-sm-4 ">
+        <h4 class="d-inline"><i class="fa-solid fa-gear icon"></i>
+          Contact Information
+        </h4>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="inputEmail4">Address </label>
+          <input type="text" class="form-control" id="inputEmail4" formControlName="address"
+          [ngClass]="{'is-invalid': addMember.controls['address'].errors && ckDep }" placeholder="Address">
+          <p class="text-danger"
+          *ngIf="addMember.controls['address'].errors && ckDep">Select Address
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">City</label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="city"
+          [ngClass]="{'is-invalid': addMember.controls['city'].errors && ckDep }" placeholder="City">
+          <p class="text-danger"
+          *ngIf="addMember.controls['city'].errors && ckDep">Select City
+        </p>
+        </div>
+        <div class="col-md-3">
+          <label for="inputEmail4">State </label>
+          <input type="text" class="form-control" id="inputEmail4" formControlName="state" 
+          [ngClass]="{'is-invalid': addMember.controls['state'].errors && ckDep }" placeholder="State">
+          <p class="text-danger"
+          *ngIf="addMember.controls['state'].errors && ckDep">Select State
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">Zip Code</label>
+          <input type="text" class="form-control" id="inputPassword4"  formControlName="zipcode" 
+          [ngClass]="{'is-invalid': addMember.controls['zipcode'].errors && ckDep }" placeholder="Zip Code">
+          <p class="text-danger"
+          *ngIf="addMember.controls['zipcode'].errors && ckDep">Select Zip Code
+        </p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="inputPassword4">Mobile Number</label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="mobile"
+          [ngClass]="{'is-invalid': addMember.controls['mobile'].errors && ckDep }" placeholder="Mobile Number">
+          <p class="text-danger"
+          *ngIf="addMember.controls['mobile'].errors && ckDep">Select Mobile Number
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">Email </label>
+          <input type="email" class="form-control" id="inputPassword4" formControlName="email"
+          [ngClass]="{'is-invalid': addMember.controls['email'].errors && ckDep }" placeholder="Email ">
+          <p class="text-danger"
+          *ngIf="addMember.controls['email'].errors && ckDep">Select Email
+        </p>
+        </div>
+      </div>
+      <br>
+      <div class="col-sm-4 ">
+        <h4 class="d-inline"><i class="fa-solid fa-gear icon"></i>
+          Physical Information
+        </h4>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="inputEmail4">Weight </label>
+          <input type="text" class="form-control" id="inputEmail4" formControlName="weight"
+          [ngClass]="{'is-invalid': addMember.controls['weight'].errors && ckDep }" placeholder="Weight">
+          <p class="text-danger"
+          *ngIf="addMember.controls['weight'].errors && ckDep">Select Weight
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">Height</label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="height"
+          [ngClass]="{'is-invalid': addMember.controls['height'].errors && ckDep }" placeholder="Height">
+          <p class="text-danger"
+          *ngIf="addMember.controls['height'].errors && ckDep">Select Height
+        </p>
+        </div>
+        <div class="col-md-3">
+          <label for="inputEmail4">Chest </label>
+          <input type="text" class="form-control" id="inputEmail4" formControlName="chest"
+          [ngClass]="{'is-invalid': addMember.controls['chest'].errors && ckDep }" placeholder="Chest">
+          <p class="text-danger"
+          *ngIf="addMember.controls['chest'].errors && ckDep">Select Chest
+        </p>
+        </div>
+        <div class="col-md-3">
+          <label for="inputPassword4">Waist</label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="waist"
+          [ngClass]="{'is-invalid': addMember.controls['waist'].errors && ckDep }"  placeholder="Waist">
+          <p class="text-danger"
+          *ngIf="addMember.controls['chest'].errors && ckDep">Select Waist
+        </p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="inputPassword4">Thigh
+          </label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="thigh"
+          [ngClass]="{'is-invalid': addMember.controls['thigh'].errors && ckDep }" placeholder="Thigh">
+          <p class="text-danger"
+          *ngIf="addMember.controls['thigh'].errors && ckDep">Select Thigh
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">Arms
+          </label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="arms"
+          [ngClass]="{'is-invalid': addMember.controls['arms'].errors && ckDep }"  placeholder="Arms ">
+          <p class="text-danger"
+          *ngIf="addMember.controls['arms'].errors && ckDep">Select Arms
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">Fat
+          </label>
+          <input type="text" class="form-control" id="inputPassword4"
+          [ngClass]="{'is-invalid': addMember.controls['fat'].errors && ckDep }" formControlName="fat" placeholder="Fat ">
+          <p class="text-danger"
+          *ngIf="addMember.controls['fat'].errors && ckDep">Select Fat
+        </p>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div class="col-sm-4 ">
+        <h4 class="d-inline"><i class="fa-solid fa-gear icon"></i>
+          Login Information
+        </h4>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="inputEmail4">Username </label>
+          <input type="text" class="form-control" id="inputEmail4" formControlName="userName"
+          [ngClass]="{'is-invalid': addMember.controls['userName'].errors && ckDep }" placeholder="Username">
+          <p class="text-danger"
+          *ngIf="addMember.controls['userName'].errors && ckDep">Select Username
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">Password</label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="password"
+          [ngClass]="{'is-invalid': addMember.controls['password'].errors && ckDep }"  placeholder="Password">
+          <p class="text-danger"
+          *ngIf="addMember.controls['password'].errors && ckDep">Select Password
+        </p>
+        </div>
+        <div class="col-md-3">
+          <label for="inputEmail4">Display Image </label>
+          <input type="file" class="form-control" id="inputEmail4" formControlName="image"(change)="onSelectFile($event)"
+          [ngClass]="{'is-invalid': addMember.controls['image'].errors && ckDep }"  placeholder="Choose File">
+          
+          <p class="text-danger"
+          *ngIf="addMember.controls['image'].errors && ckDep">Select Image
+        </p>
+      
+        </div>
+        <div class="col-md-3">
+          <label class="hoverable" for="fileInput">
+            <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" style="width: 100px;"> 
+            <div class="background"></div>
+          </label>
+        </div>
+       
+      </div>
+      <hr>
+      <br>
+      <div class="col-sm-4 ">
+        <h4 class="d-inline"><i class="fa-solid fa-gear icon"></i>
+          More Information
+        </h4>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="inputPassword4">Membership</label>
+          <select class="form-select" [ngClass]="{'is-invalid': addMember.controls['memberShip'].errors && ckDep }" formControlName="memberShip">
+            <option value="" disabled> Select Plan</option>
+            <option value="Platinum Membership" > Platinum Membership</option>
+            <option value="Gold Membership" > Gold Membership</option>
+            <option value="Silver Membership" >  Silver Membership</option>
+            <p class="text-danger"
+            *ngIf="addMember.controls['memberShip'].errors && ckDep">Select Membership
+          </p>
+          </select>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">Membership Valid From</label>
+          <input type="date" class="form-control" id="inputPassword4"  formControlName="memberShipfrom"
+          [ngClass]="{'is-invalid': addMember.controls['memberShipfrom'].errors && ckDep }" placeholder="Membership Valid From">
+          <p class="text-danger"
+          *ngIf="addMember.controls['memberShipfrom'].errors && ckDep">Select Membership Valid From
+        </p>
+        </div>
+        <div class=" col-md-3">
+          <label for="inputPassword4">Membership Valid To</label>
+          <input type="date" class="form-control" id="inputPassword4"  formControlName="memberShipto"
+          [ngClass]="{'is-invalid': addMember.controls['memberShipto'].errors && ckDep }"  placeholder="Membership Valid To">
+          <p class="text-danger"
+          *ngIf="addMember.controls['memberShipto'].errors && ckDep">Select Membership Valid To
+        </p>
+        </div>
+      </div>
+      <br>
+    </form>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+      <button class="btn btn-primary me-md-2 Btn_Save" type="button" (click)="addMembers()">Save</button>
+      <button class="btn btn-primary Btn_Close" type="button">Cancle</button>
+    </div>
+  </div>
+
+</main>
